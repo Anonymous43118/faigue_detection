@@ -1,7 +1,7 @@
 # faigue_detection
 結合影像辨識+PPO模型判別+環境數值
 1.	get_data_from_subjective.py：啟動攝像頭並且連結到樹莓派以及筆電的資料庫，並將受試者的眼睛長寬比(EAR)、嘴部長寬比(MAR)、溫濕度、二氧化碳濃度都記錄下來，並寫回資料庫，執行指令如下:
-python { get_data_from_subjective.py的檔案路徑} -p {shape_predictor_68_face_landmarks的路徑} -w {要調用的攝像頭編號，預設為0，有外接可設為1}
+  python { get_data_from_subjective.py的檔案路徑} -p {shape_predictor_68_face_landmarks的路徑} -w {要調用的攝像頭編號，預設為0，有外接可設為1}
 
 2.	DDPG_implementation資料夾：裡面包含DDPG,TD3,SAC,PPO的所有訓練的code
   compare_model資料夾：保存所有訓練好的模型(包含比較對象)、訓練時的環境檔、replay buffer的內容(如果模型本身有)、以及訓練之後的結果(可用tensorboard的logdir指令調用)
