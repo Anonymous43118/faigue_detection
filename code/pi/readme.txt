@@ -1,0 +1,2 @@
+1. 需同時執行face_implementation內的start.py以及此connect_to_windows.py
+2. ccs811_test為connect_to_windows.py調用的其中一個檔案，可不理會

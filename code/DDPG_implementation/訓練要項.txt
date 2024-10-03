@@ -1,0 +1,59 @@
+可能問題
+1. 訓練不起來可能是因為環境的隨機性導致
+2. 權重初始化問題
+3. 環境可能有無限或者NaN
+4. 較大的獎勵值會導致較大的初始平方誤差（重新縮放獎勵(歸一化)或降低學習率來修復）(目前因為還不確定我獎勵的最大值和最小值，所以暫不使用)
+5. 環境不符合馬爾科夫過程
+6. Catastrophic forgetting due to focusing too much on specific results and generalising from them incorrectly. 
+Your agent might be suffering from this if it starts to learn correctly, reaching some level of competence at the task before failing.
+7. 增加探索的幅度(可能要改為減少探索幅度)
+8. 使用cruiosity driven reward来提高智能体的探索
+9. 使用scheduler，例如:
+    1. action noise遞減
+    2. learning rate遞減
+    3. Batch Size
+    4. Reward 
+    5. γ值
+    6. 網路更新頻率
+10. 嘗試不同的種子碼
+11. 自己產生資料?
+12. 環境往正確方向的話給予獎勵，只有在環境達到目標時給予大量獎勵，其餘的只根據環境變化方向來給予
+13. 網路層數遞減
+14. 環境數值在餵給模型之前，沒有歸一化!!!!!!!!!!!!!!!!!!!!!!!!!!!
+已經嘗試:
+1. obs歸一化處理
+2. 縮放獎勵(獎勵範圍介於[12.65,-12])
+3. action space normalization
+4. 拔掉環境亮度
+相關網址:
+1. https://ai.stackexchange.com/questions/21538/if-deep-q-learning-starts-to-choose-only-one-action-is-this-a-sign-that-the-alg
+2. https://stats.stackexchange.com/questions/299160/under-what-conditions-dqn-selects-only-one-action
+3. https://www.zhihu.com/question/411114461
+4. https://www.reddit.com/r/reinforcementlearning/comments/139x9zp/dqn_agent_always_performing_the_same_action/?rdt=56002
+
+
+1. dataset拆分四個場景分別實作
+2. 比較對象備案:
+1. DNN
+2. RNN
+3. GRU
+
+
+1. 七個指標統整，寫一版
+2. 訓練時間減少一半，看看會不會贏比較多
+3. 疲勞數值組合，取極端值
+4. 補一人的數據進去dataset
+
+
+
+0 冷氣採用100000次, 4人
+1車窗加跑100000次, 4人
+2 precision, recall, f1-score採用weighted average
+3車窗/冷氣加跑125000次, 4人
+4 100000次/4人和125000次/4人選用贏較多的
+5先寫冷氣,1跑完後寫車窗
+6 4決定後,將最好的冷氣/車窗再跑一輪
+---------------------------------------------------------------------------
+以下比PPO和三個比較對象: 兩個控制項(冷氣/車窗),四個情境+整體
+以下比PPO和image only: 兩個控制項,整體
+reward曲線先做
