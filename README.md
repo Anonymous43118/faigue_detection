@@ -10,10 +10,9 @@
     iii.	train_sac_ac_temp_humi_co2.py：訓練SAC模型的code
     iv.	train_td3_ac_temp_humi_co2.py：訓練TD3模型的code
 
-  Env資料夾：包含所有訓練模型時會用到的環境，包含溫度(temp_simu.py)、濕度(humi_simu.py)、二氧化碳濃度模擬模組(co2_simu.py)以及獎勵函數計算(Rewardcalcuate.py，此檔案可以忽略)、調用所有模組的最終訓練環境(MyEnv.py)
-
-  custom_wrapper.py：用於模型功能測試，可忽略
-  train_ac_temp_co2.py到train_win_temp_humi.py：共六個檔案，用於訓練不同環境條件數值下的DDPG模型，可忽略
+    Env資料夾：包含所有訓練模型時會用到的環境，包含溫度(temp_simu.py)、濕度(humi_simu.py)、二氧化碳濃度模擬模組(co2_simu.py)以及獎勵函數計算(Rewardcalcuate.py，此檔案可以忽略)、調用所有模組的最終訓練環境(MyEnv.py)
+      custom_wrapper.py：用於模型功能測試，可忽略
+      train_ac_temp_co2.py到train_win_temp_humi.py：共六個檔案，用於訓練不同環境條件數值下的DDPG模型，可忽略
 
 3.	face_implementation資料夾:包含調用攝像頭、調用訓練好的PPO模型以及執行實際疲勞判別的所有code
   did_not_use資料夾：為最初影像辨識原作者包含的所有python檔案，因為論文並未使用，所以存放於此資料夾中，對於原作者的影像識別功能有疑問，可以參閱此資料夾以及introduction資料夾
